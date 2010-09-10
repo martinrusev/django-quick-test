@@ -1,1 +1,0 @@
-django_better_tests
