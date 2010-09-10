@@ -1,0 +1,15 @@
+Metadata-Version: 1.0
+Name: django-better-tests
+Version: 0.1.0
+Summary: Django test runner that separates test database creation and test running
+Home-page: http://github.com/martinrusev/django-better-tests
+Author: Martin Rusev
+Author-email: martinmcloud@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: django,tests,nose,
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Framework :: Django
+Classifier: Environment :: Web Environment
