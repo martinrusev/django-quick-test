@@ -12,7 +12,7 @@ the database creation and the test run
 Installation
 ------------
 
-1. Either download the tarball and run ``python setup.py install``,
+1. Download the tarball and run ``python setup.py install``,
 
 2. Add ``django_better_tests`` to your INSTALLED_APPS in settings.py:
 
