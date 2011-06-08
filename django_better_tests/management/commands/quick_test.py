@@ -22,7 +22,7 @@ class Command(BaseCommand):
         failfast = options.get('failfast', False)
         
         
-        test_module = __import__('tests.testrunner', {}, {}, 'NoseTestSuiteRunner')
+        test_module = __import__('django_better_tests.testrunner', {}, {}, 'NoseTestSuiteRunner')
         TestRunner = getattr(test_module, 'NoseTestSuiteRunner')
 
         if hasattr(TestRunner, 'func_name'):
