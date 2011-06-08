@@ -8,7 +8,6 @@ from django.core.management import call_command
 class Command(BaseCommand):
     help = 'Creates the test db'
 
-
     def handle(self, *args, **options):
         connection.creation.create_test_db(verbosity = 1, autoclobber=False)
         call_command('migrate', database='test', app=None, 

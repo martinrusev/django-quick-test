@@ -48,7 +48,6 @@ Usage
 
 Once installed, using the new test suite runner replacement is easy. Create your test database with::
 
-
 	python manage.py create_test_db 
 	
 After that run your tests with
@@ -59,10 +58,28 @@ After that run your tests with
 And finally if you want destroy the test database with
 
 	python manage.py destroy_test_db
+
+
+--------
+Alternative usage 
+------
+
+You can use just the quick_test manual and update the database only when needed. 
+
+    Manual commands
+
+    python manage.py syncdb --database=test
+    python manage.py migrate --database=test
+
+    and after that only
+
+    python manage.py quick_test
+
 	
 ------------
 Requirements
 ------------
 
 Django 1.2+
+nose
 

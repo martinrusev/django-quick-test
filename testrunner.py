@@ -4,11 +4,9 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.test.simple import DjangoTestSuiteRunner
 from django.db import connection
-
-
 import nose.core
 
-from django_nose.plugin import ResultPlugin
+from tests.plugin import ResultPlugin
 
 try:
     any
