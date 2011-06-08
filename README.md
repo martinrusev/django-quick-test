@@ -1,5 +1,5 @@
-django-better-tests
-=======================
+# django-better-tests
+
 
 This is a collection of commands for your django projects, that separates
 test database creation from the actual test run
@@ -8,9 +8,9 @@ test database creation from the actual test run
 The advantages of using this over 'manage.py test' is that you control both
 the database creation and the test run
 
-------------
-Installation
-------------
+
+## Installation
+
 
 1. Either download the tarball and run ``python setup.py install``,
 
@@ -42,9 +42,9 @@ Installation
 	TEST_RUNNER = 'django_better_tests.NoseTestSuiteRunner'
 
 
------
-Usage
------
+
+## Usage
+
 
 Once installed, using the new test suite runner replacement is easy. Create your test database with::
 
@@ -60,9 +60,9 @@ And finally if you want destroy the test database with
 	python manage.py destroy_test_db
 
 
---------
-Alternative usage 
-------
+
+## Alternative usage 
+
 
 You can use just the quick_test command and manualy update the database only when needed. 
 
@@ -76,9 +76,9 @@ and after that only
 	python manage.py quick_test
 
 
-------------
-Requirements
-------------
+
+## Requirements
+
 
 Django 1.2+
 
