@@ -16,11 +16,11 @@ Installation
 
 2. Add ``django_better_tests`` to your INSTALLED_APPS in settings.py:
 
-       INSTALLED_APPS = (
-		...
-		'django_better_tests',
-		...
-		)
+	INSTALLED_APPS = (
+	...
+	'django_better_tests',
+	...
+	)
 
 
 3. Add test database details in settings.py 
@@ -36,10 +36,10 @@ Installation
 		}
 	}		
 	
-		
+
 4. Then set TEST_RUNNER in settings.py::
 
-       TEST_RUNNER = 'django_better_tests.NoseTestSuiteRunner'
+	TEST_RUNNER = 'django_better_tests.NoseTestSuiteRunner'
 	   
 
 -----
@@ -64,7 +64,7 @@ And finally if you want destroy the test database with
 Alternative usage 
 ------
 
-You can use just the quick_test manual and update the database only when needed. 
+You can use just the quick_test command and manualy update the database only when needed. 
 
     Manual commands
 
@@ -81,5 +81,6 @@ Requirements
 ------------
 
 Django 1.2+
+
 nose
 
