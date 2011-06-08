@@ -16,12 +16,13 @@ the database creation and the test run
 
 2. Add ``django_better_tests`` to your INSTALLED_APPS in settings.py:
 
-	INSTALLED_APPS = (
-				'django_better_tests',
-			)
+
+	INSTALLED_APPS = ('django_better_tests')
+
 
 
 3. Add test database details in settings.py 
+
 
 	DATABASES = {
 		'default':{
