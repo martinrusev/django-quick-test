@@ -15,14 +15,13 @@ class Command(BaseCommand):
     requires_model_validation = False
 
     def handle(self, *test_labels, **options):
-        from django.conf import settings
 
         verbosity = int(options.get('verbosity', 1))
         interactive = options.get('interactive', True)
         failfast = options.get('failfast', False)
         
         
-        test_module = __import__('django_better_tests.testrunner', {}, {}, 'NoseTestSuiteRunner')
+        test_module = __import__('quick_test.testrunner', {}, {}, 'NoseTestSuiteRunner')
         TestRunner = getattr(test_module, 'NoseTestSuiteRunner')
 
         if hasattr(TestRunner, 'func_name'):
