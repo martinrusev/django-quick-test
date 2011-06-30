@@ -29,6 +29,7 @@ your test suite in seconds instead of minutes.
 3. Add your test database details in settings.py 
 
 ::
+
 	DATABASES = {
 		'default':{
 			'ENGINE':''},
@@ -58,6 +59,7 @@ you have loaded the required test data(fixtures)
 Commands you have to run before using the command
 
 ::
+
 	python manage.py syncdb --database=test
 	python manage.py migrate --database=test
 
@@ -65,6 +67,7 @@ Commands you have to run before using the command
 and finaly run your tests with
 
 ::
+
 	python manage.py quick_test
 
 
