@@ -15,7 +15,8 @@ your test suite in seconds instead of minutes.
 ===============
 
 
-1. Download the tarball and run ``python setup.py install``
+1. Install the package with ``pip install django_quick_test`` or alternatively you can  
+download the tarball and run ``python setup.py install``
 
 2. Add ``quick_test`` to your INSTALLED_APPS list in settings.py
    
