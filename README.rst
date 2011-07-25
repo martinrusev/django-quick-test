@@ -45,7 +45,7 @@ download the tarball and run ``python setup.py install``
 
 ::
 
-	TEST_RUNNER = 'quick_test.NoseTestSuiteRunner'
+	TEST_RUNNER = 'quick_test.testrunner.NoseTestSuiteRunner'
 
 
 =========
