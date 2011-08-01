@@ -4,7 +4,7 @@ import os
 def read(filename):
     return open(os.path.join(os.path.dirname(__file__), filename)).read()
  
-version = '0.3.0'
+version = '0.3.1'
  
 setup(
     name='django_quick_test',

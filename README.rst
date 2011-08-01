@@ -27,13 +27,14 @@ download the tarball and run ``python setup.py install``
 
 
 
-3. Add your test database details in settings.py 
+3. Add your test database details in settings.py. 
 
 ::
 
 	DATABASES = {
 		'default':{
-			'ENGINE':''},
+			'ENGINE':'',
+        },
 		'test':{
 			'ENGINE': '',
 			'NAME': 'test_database',
@@ -115,4 +116,5 @@ overwriting this method will give you additional speed boost.
 Django 1.2+
 
 nose
+
 

@@ -3,9 +3,10 @@ import sys
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.test.simple import DjangoTestSuiteRunner
-from django.db import connection
 import nose.core
 from plugin import ResultPlugin
+from django.db.backends import creation
+from django.db import connection, DatabaseError
 
 try:
 	any
@@ -49,12 +50,21 @@ class NoseTestSuiteRunner(DjangoTestSuiteRunner):
 		settings.DEBUG = False
 
 		self.setup_test_environment()
+		
+		
+		# Switch to the test database
+		old_name = settings.DATABASES['default']['NAME']
 
+		if settings.DATABASES['test']['NAME']:
+			settings.DATABASES['default']['NAME'] = settings.DATABASES['test']['NAME']
+		else:
+			settings.DATABASES['default']['NAME'] = creation.TEST_DATABASE_PREFIX + settings.DATABASES['default']['NAME']
+		
+		connection.settings_dict["DATABASE_NAME"] = settings.DATABASES['default']['NAME']
+	
 		try:
-			settings.DATABASES['default']['SUPPORTS_TRANSACTIONS'] = connection.creation._rollback_works()
-			settings.DATABASES['test']['SUPPORTS_TRANSACTIONS'] = connection.creation._rollback_works()
-		except:
-			# the database engine doesn't support transactions
+			settings.DATABASES['default']['SUPPORTS_TRANSACTIONS'] = connection.creation._rollback_works()	
+		except: 
 			pass
 
 		nose_argv = ['nosetests', '--verbosity', str(self.verbosity)]
@@ -77,6 +87,10 @@ class NoseTestSuiteRunner(DjangoTestSuiteRunner):
 
 
 		result = self.run_suite(nose_argv)
+
+		#Restore the old db name.
+		settings.DATABASES['default']['NAME'] = old_name
+		connection.settings_dict["DATABASE_NAME"] = old_name
 
 		self.teardown_test_environment()
 		# suite_result expects the suite as the first argument.  Fake it.
